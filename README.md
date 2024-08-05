@@ -1,0 +1,2 @@
+# clearwin
+clear window
