@@ -3,6 +3,8 @@ use crate::utils::http_get;
 pub fn get_user_commits(username: String) {
     println!("git username: {}", username);
     let uri = "https://api.github.com/users/".to_owned() + &username;
+    println!("git user uri: {}", uri);
+
     let _ = http_get(uri.as_str());
 }
 

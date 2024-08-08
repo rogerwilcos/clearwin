@@ -1,7 +1,8 @@
+use handlers::get_user_commits;
 use teloxide::{dispatching::dialogue::InMemStorage, prelude::*};
-
 pub mod handlers;
 pub mod utils;
+
 
 type MyDialogue = Dialogue<State, InMemStorage<State>>;
 type HandlerResult = Result<(), Box<dyn std::error::Error + Send + Sync>>;
@@ -20,8 +21,11 @@ pub enum State {
     },
 }
 
+fn main() {
+    get_user_commits("rogerwilcos".to_string());
+}
 #[tokio::main]
-async fn main() {
+async fn main2() {
     pretty_env_logger::init();
     log::info!("Starting dialogue bot...");
 
